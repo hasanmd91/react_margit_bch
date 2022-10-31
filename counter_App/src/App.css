@@ -1,0 +1,53 @@
+* {
+  box-sizing: border-box;
+  padding: 0px;
+  margin: 0px;
+}
+
+.calculator {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-direction: column;
+  height: 80vh;
+}
+
+.circle {
+  width: 300px;
+  height: 300px;
+  border-radius: 300px;
+  background-color: azure;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.circle p {
+  color: rgb(206, 11, 11);
+  font-size: 40px;
+}
+
+button {
+  padding: 15px;
+  margin: 10px;
+  border-radius: 10px;
+  border: none;
+  width: 150px;
+  cursor: pointer;
+  transition: 300ms ease all;
+}
+
+button:hover {
+  background-color: coral;
+}
+
+.header {
+  height: 10vh;
+  padding: 15px;
+}
+
+.footer {
+  height: 10vh;
+  text-align: center;
+  font-size: 24px;
+}
