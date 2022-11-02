@@ -15,9 +15,9 @@ const Card = (props) => {
       <div className="animal_info">
         <h2>{props.name[0].toUpperCase() + props.name.slice(1)}</h2>
         <div className="social_wrapper">
+          <button onClick={props.removeLikes}> Remove </button>
           <p>{props.likes} &#9829;</p>
           <button onClick={props.addLikes}> Add like </button>
-          <button onClick={props.removeLikes}> Remove </button>
         </div>
       </div>
     </div>
