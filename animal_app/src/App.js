@@ -65,7 +65,7 @@ export default class App extends Component {
           <h1> {this.state.animals.length} Animals were found</h1>
           <input
             onChange={this.searchHandeler}
-            placeholder={"erach animal name here"}
+            placeholder={"Serach animal name here"}
           />
         </div>
         <div className="animalList_container">{animalList}</div>
