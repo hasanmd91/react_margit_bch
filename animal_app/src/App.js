@@ -4,6 +4,7 @@ import Card from "./Card";
 
 export default class App extends Component {
   state = { animals: animals, search: "" };
+
   removeHandeler = (name) => {
     const UpdatedArray = this.state.animals.filter(
       (animal) => animal.name !== name
@@ -11,16 +12,30 @@ export default class App extends Component {
     this.setState({ animals: UpdatedArray });
   };
 
+  removeAdd = (name) => {
+    this.setState((state) => {
+      const updatedArray = state.animals.map((animal) => {
+        if (animal.name === name) {
+          return { ...animal, likes: animal.likes - 1 };
+        } else {
+          return animal;
+        }
+      });
+      return { animals: updatedArray };
+    });
+  };
+
   addHandeler = (name) => {
     this.setState((state) => {
-      let UpdatedArray = state.animals.map((animal) => {
+      const updatedArray = state.animals.map((animal) => {
         if (animal.name === name) {
+          console.log({ ...animal, likes: animal.likes + 1 });
           return { ...animal, likes: animal.likes + 1 };
         } else {
           return animal;
         }
       });
-      return { animals: UpdatedArray };
+      return { animals: updatedArray };
     });
   };
 
@@ -40,16 +55,20 @@ export default class App extends Component {
         key={animal.name}
         removeCard={() => this.removeHandeler(animal.name)}
         addLikes={() => this.addHandeler(animal.name)}
+        removeLikes={() => this.removeAdd(animal.name)}
       />
     ));
     return (
-      <div>
-        <div>
+      <div className="">
+        <div className="container">
           {" "}
-          <h1> {this.state.animals.length} Animal</h1>
-          <input onChange={this.searchHandeler} />
+          <h1> {this.state.animals.length} Animals were found</h1>
+          <input
+            onChange={this.searchHandeler}
+            placeholder={"erach animal name here"}
+          />
         </div>
-        <div className="container">{animalList}</div>
+        <div className="animalList_container">{animalList}</div>
       </div>
     );
   }

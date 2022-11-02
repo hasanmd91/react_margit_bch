@@ -5,7 +5,7 @@
 }
 
 .card {
-  width: 200px;
+  width: 210px;
   height: 250px;
   border: 1px solid transparent;
   display: flex;
@@ -42,7 +42,7 @@
   justify-content: space-between;
   width: 80%;
   align-items: center;
-  padding: 7px;
+  padding: 5px;
 }
 
 .social_wrapper button {
@@ -53,7 +53,7 @@
   border-radius: 3px;
 }
 
-.container {
+.animalList_container {
   display: flex;
   flex-wrap: wrap;
 }
@@ -66,4 +66,21 @@
   cursor: pointer;
 }
 
-.removebutton: ho;
+.container {
+  text-align: center;
+  padding: 10px;
+}
+
+.container input {
+  border: 1px solid;
+  border-radius: 3px;
+  padding: 5px;
+  width: 300px;
+  height: 30px;
+  margin: 5px;
+}
+
+.container h1 {
+  font-size: 40px;
+  color: rgb(59, 57, 57);
+}
