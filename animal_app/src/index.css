@@ -8,15 +8,19 @@
   width: 200px;
   height: 250px;
   border: 1px solid transparent;
-
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   margin: 15px;
-  background-color: aliceblue;
+  background-color: rgb(60, 62, 63);
   box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px,
     rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
 }
+
+.card > div {
+  color: white;
+}
+
 .image_wrapper {
   object-fit: cover;
   position: relative;
@@ -53,3 +57,13 @@
   display: flex;
   flex-wrap: wrap;
 }
+
+.removeButton {
+  position: absolute;
+  right: 0;
+  font-size: 19px;
+  padding: 5px;
+  cursor: pointer;
+}
+
+.removebutton: ho;

@@ -4,15 +4,19 @@ const Card = (props) => {
   return (
     <div className="card">
       <div className="image_wrapper">
+        <button className="removeButton" onClick={props.removeCard}>
+          X
+        </button>
         <img
-          src={`https://source.unsplash.com/500x400/?${props.name} alt=${props.name}`}
+          src={`https://source.unsplash.com/500x400/?${props.name} `}
+          alt={`${props.name} `}
         />{" "}
       </div>
       <div className="animal_info">
-        <h2>{props.name}</h2>
+        <h2>{props.name[0].toUpperCase() + props.name.slice(1)}</h2>
         <div className="social_wrapper">
           <p>0 &#9829;</p>
-          <button> Add like </button>
+          <button onClick={props.addLikes}> Add like </button>
         </div>
       </div>
     </div>
