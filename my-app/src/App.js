@@ -27,14 +27,13 @@ export default class App extends Component {
   };
 
   remOverlay = (e) => {
-    console.log("oi i am watching ");
     this.setState({ overlay: false });
   };
 
-  onsubmit = (e, onSubmitProps) => {
+  onsubmit = (e) => {
     e.preventDefault();
-    console.log(onSubmitProps);
     this.setState({ overlay: true });
+    e.target.reset();
   };
 
   inputhandeler = (e) => {

@@ -40,7 +40,6 @@ const form = (props) => {
             id="message"
             name="message"
             rows="5"
-            required="require"
             onChange={props.inputhandeler}
           />
         </div>
