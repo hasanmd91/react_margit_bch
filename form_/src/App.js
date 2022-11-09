@@ -7,57 +7,54 @@ import form from "./component/Form";
 
 export default class App extends Component {
   state = {
-    firstname: "",
-    lastname: "",
-    phonenumber: "",
-    message: " ",
-    role: "",
-    overlay: false,
-  };
-
-  sentMessage = () => {
-    this.setState({
+    note: {
       firstname: "",
       lastname: "",
       phonenumber: "",
       message: " ",
       role: "",
+    },
+
+    overlay: false,
+  };
+
+  sentMessage = () => {
+    this.setState({
+      note: {
+        firstname: "",
+        lastname: "",
+        phonenumber: "",
+        message: " ",
+        role: "",
+      },
       overlay: false,
     });
   };
 
   remOverlay = (e) => {
-    this.setState({ overlay: false });
+    this.setState({ overlay: !this.state.overlay });
   };
 
   onsubmit = (e) => {
     e.preventDefault();
-    this.setState({ overlay: true });
+    this.setState({ overlay: !this.state.overlay });
     e.target.reset();
   };
 
   inputhandeler = (e) => {
-    this.setState({ [e.target.name]: e.target.value });
+    this.setState({
+      note: { ...this.state.note, [e.target.name]: e.target.value },
+    });
   };
 
   render() {
     return (
       <div className="App">
         <Form inputhandeler={this.inputhandeler} onsubmit={this.onsubmit} />
-        <View
-          firstname={this.state.firstname}
-          lastname={this.state.lastname}
-          phonenumber={this.state.phonenumber}
-          message={this.state.message}
-          role={this.state.role}
-        />
+        <View {...this.state.note} />
         {this.state.overlay && (
           <Overlay
-            firstname={this.state.firstname}
-            lastname={this.state.lastname}
-            phonenumber={this.state.phonenumber}
-            message={this.state.message}
-            role={this.state.role}
+            {...this.state.note}
             remOverlay={this.remOverlay}
             sentMessage={this.sentMessage}
           />

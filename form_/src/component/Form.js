@@ -53,7 +53,7 @@ const form = (props) => {
             onChange={props.inputhandeler}
           >
             {" "}
-            <option name="teacher"> Teacher</option>
+            <option name="teacher"> Teacher </option>
             <option name="student"> Student</option>
             <option name="parents"> Parents</option>
           </select>
